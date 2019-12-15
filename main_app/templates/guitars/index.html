@@ -9,10 +9,10 @@
       <span class="card-title">{{ guitar.name }}</span>
       <p>Brand: {{ guitar.brand }}</p>
       <p>Description: {{ guitar.description }}</p>
-      {% if cat.age > 0 %}
-        <p>Age: {{ cat.age }}</p>
+      {% if guitar.year > 0 %}
+        <p>Year: {{ guitar.year }}</p>
       {% else %}
-        <p>Age: Kitten</p>
+        <p>Year: Brand New</p>
       {% endif %}
     </div>
   </div>
