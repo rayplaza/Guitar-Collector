@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Guitar List</h1>
+<h1>Guitar Details</h1>
 
 {% for guitar in guitars %}
   <div class="card">
-    <a href="/guitars/{{ guitar.id }}">
     <div class="card-content">
       <span class="card-title">{{ guitar.name }}</span>
       <p>Brand: {{ guitar.brand }}</p>
