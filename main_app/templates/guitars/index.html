@@ -5,7 +5,7 @@
 
 {% for guitar in guitars %}
   <div class="card">
-    <a href="/guitars/{{ guitar.id }}">
+    <a href="{% url 'detail' guitar.id %}">
     <div class="card-content">
       <span class="card-title">{{ guitar.name }}</span>
       <p>Brand: {{ guitar.brand }}</p>

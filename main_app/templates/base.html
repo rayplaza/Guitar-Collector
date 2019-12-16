@@ -18,8 +18,9 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;GuitarCollector</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/guitars">View All My Guitars</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'guitars_create' %}">Add A Guitar</a></li>
+          <li><a href="{% url 'index' %}">View All My Guitars</a></li>
         </ul>
       </div>
     </nav>

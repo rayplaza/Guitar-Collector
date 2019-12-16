@@ -18,7 +18,10 @@
         <p>Year: Brand New</p>
       {% endif %}
     </div>
-    </a>
+    <div class="card-action">
+      <a href="{% url 'guitars_update' guitar.id %}">Edit</a>
+      <a href="{% url 'guitars_delete' guitar.id %}">Delete</a>
+    </div>
   </div>
 
 {% endblock %}
