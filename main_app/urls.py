@@ -13,6 +13,6 @@ urlpatterns = [
     path('pedals/', views.PedalList.as_view(), name='pedals_index'),
     path('pedals/<int:pk>/', views.PedalDetail.as_view(), name='pedals_detail'),
     path('pedals/create/', views.PedalCreate.as_view(), name='pedals_create'),
-    path('pedals/<int:pk>/update/', views.PedalUpdate.as_view(), name='pedals_udpate'),
+    path('pedals/<int:pk>/update/', views.PedalUpdate.as_view(), name='pedals_update'),
     path('pedals/<int:pk>/delete/', views.PedalDelete.as_view(), name='pedals_delete'),
 ]
