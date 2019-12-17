@@ -9,6 +9,7 @@
   <title>Guitar Collector</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
   <header class="navbar-fixed">
@@ -19,6 +20,8 @@
         </ul>
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'pedals_create' %}">Add a Pedal</a></li>
+          <li><a href="{% url 'pedals_index' %}">View All Pedals</a></li>
           <li><a href="{% url 'guitars_create' %}">Add A Guitar</a></li>
           <li><a href="{% url 'index' %}">View All My Guitars</a></li>
         </ul>
