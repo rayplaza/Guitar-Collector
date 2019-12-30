@@ -60,6 +60,48 @@
   </div>
 </div>
 
+<hr>
+<div class="row">
+  <div class="col s6">
+    <h3>{{ guitar.name }}'s Pedals</h3>
+    {% if guitar.pedals.count %}
+      {% for pedal in guitar.pedals.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              A {{ pedal.name }}
+            </span>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>No Pedals :(</h5>
+    {% endif %}
+  </div>
+
+  <div class="col s6">
+    <h3>Available Pedals</h3>
+    {% if pedals.count %}
+      {% for pedal in pedals.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              A {{ pedal.name }}
+            </span>
+          </div>
+          <div class="card-action">
+            <form action="" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">Add</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>{{guitar.name}} Already Has All Pedals Available</h5>
+    {% endif %}
+  </div>
+
 <script>
     var dateEl = document.getElementById('id_date');
     M.Datepicker.init(dateEl, {

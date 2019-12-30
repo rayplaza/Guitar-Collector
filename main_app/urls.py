@@ -16,4 +16,5 @@ urlpatterns = [
     path('pedals/create/', views.PedalCreate.as_view(), name='pedals_create'),
     path('pedals/<int:pk>/update/', views.PedalUpdate.as_view(), name='pedals_update'),
     path('pedals/<int:pk>/delete/', views.PedalDelete.as_view(), name='pedals_delete'),
+    path('accounts/signup/', views.signup, name='signup'),
 ]

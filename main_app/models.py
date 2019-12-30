@@ -31,6 +31,7 @@ class Guitar(models.Model):
     wood = models.CharField(max_length=100)
     pickup = models.CharField(max_length=100)
     description = models.TextField(max_length=250)
+    pedals = models.ManyToManyField(Pedal)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
