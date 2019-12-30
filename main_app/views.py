@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .models import Guitar, Pedal
+from .models import Guitar, Pedal, Photo
 from .forms import ServicingForm
+import uuid
+import boto3
+
 
 # Create your views here.
 class GuitarCreate(CreateView):
@@ -61,3 +64,5 @@ class PedalUpdate(UpdateView):
 class PedalDelete(DeleteView):
     model = Pedal
     success_url = '/pedals/'
+
+
