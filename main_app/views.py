@@ -66,3 +66,19 @@ class PedalDelete(DeleteView):
     success_url = '/pedals/'
 
 
+def add_photo(request, guitar_id):
+  S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
+  BUCKET = 'catcollector-rpc'
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+      s3 = boto3.client('s3')
+      key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+      try:
+        s3.upload_fileobj(photo_file, BUCKET, key)
+        url = f'{S3_BASE_URL}{BUCKET}/{key}'
+        photo = Photo(url=url, guitar_id=guitar_id)
+        photo.save()
+      except:
+        print('An error occurrrrrred uploading file to S3')
+  return redirect('detail', guitar_id=guitar_id)
+
