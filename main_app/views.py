@@ -58,6 +58,12 @@ def add_service(request, guitar_id):
         new_service.save()
     return redirect('detail', guitar_id=guitar_id)
 
+@login_required
+def assoc_pedal(request, guitar_id, pedal_id):
+  Guitar.objects.get(id=guitar_id).pedals.add(pedal_id)
+  return redirect('detail', guitar_id=guitar_id)
+
+
 class PedalList(LoginRequiredMixin, ListView):
     model = Pedal
 
